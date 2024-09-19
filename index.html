@@ -9,18 +9,14 @@
         body {
             font-family: 'Arial', sans-serif;
             color: #fff;
-            background: url('path_to_cybersecurity_background_image.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #0A0F18;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #111;
             padding: 1rem;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
         header img {
             width: 150px;
@@ -35,28 +31,25 @@
             color: #00d8ff;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
             transition: color 0.3s ease;
         }
         nav a:hover {
             color: #fff;
         }
         section {
-            display: flex;
-            justify-content: space-between;
             padding: 3rem;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(10, 15, 24, 0.9);
+            color: #fff;
+            display: none;
         }
-        .content {
-            width: 60%;
+        .active-section {
+            display: block;
         }
         .content h2 {
             color: #00d8ff;
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-        }
-        .content p {
-            font-size: 1.2rem;
-            line-height: 1.6;
         }
         .contact-form {
             width: 35%;
@@ -64,23 +57,19 @@
             padding: 2rem;
             border-radius: 8px;
         }
-        .contact-form h3 {
-            margin-bottom: 1rem;
-        }
-        .contact-form label {
-            display: block;
-            margin: 0.5rem 0 0.2rem;
-        }
+        .contact-form label,
         .contact-form input,
         .contact-form textarea {
+            display: block;
             width: 100%;
-            padding: 0.5rem;
             margin-bottom: 1rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 0.5rem;
             background-color: #333;
             color: #fff;
+            border-radius: 4px;
+            border: none;
         }
         .contact-form button {
             width: 100%;
@@ -90,104 +79,33 @@
             color: #000;
             font-weight: bold;
             font-size: 1.1rem;
-            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
         .contact-form button:hover {
             background-color: #00b3e6;
         }
-
-        /* Team section */
-        .team-section {
-            padding: 3rem;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: none; /* Hidden by default */
-        }
-        .team-section h2 {
-            color: #00d8ff;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .team-member {
-            background-color: #333;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .team-member img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-        .team-member h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-        .team-member p {
-            margin-bottom: 1rem;
-        }
-        .team-member .position {
-            color: #00d8ff;
-            font-weight: bold;
-        }
-        .resume-link {
-            background-color: #00d8ff;
-            color: #000;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
         .footer {
-            background-color: rgba(0, 0, 0, 0.9);
-            color: #fff;
+            background-color: #111;
             text-align: center;
             padding: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .categories {
-            text-align: center;
-            margin: 2rem 0;
-        }
-        .categories a {
-            margin: 0 1rem;
-            font-size: 1.2rem;
-            color: #00d8ff;
-            text-decoration: none;
-        }
-        .categories a:hover {
             color: #fff;
         }
-        .resources-section {
-            padding: 3rem;
-            background-color: rgba(0, 0, 0, 0.9);
-            text-align: center;
+        .footer p {
+            margin: 0;
         }
-        .resources-section h2 {
-            color: #00d8ff;
-            margin-bottom: 2rem;
+        ul {
+            list-style: none;
+            padding: 0;
         }
-        .soc-diagram {
-            width: 70%;
-            margin: 0 auto;
+        ul li {
+            padding: 0.5rem;
         }
-        .soc-diagram img {
-            width: 100%;
-        }
-
-        /* Address section */
-        .footer .address {
-            margin-top: 1rem;
+        .blog-entry {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #333;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -198,116 +116,101 @@
 </header>
 
 <nav>
-    <a href="#solutions">Solutions</a>
-    <a href="#partners">Partners</a>
-    <a href="#blog">Blog</a>
-    <a href="#resources" id="resources-link">Resources</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a onclick="showSection('solutions')">Solutions</a>
+    <a onclick="showSection('partners')">Partners</a>
+    <a onclick="showSection('blog')">Blog</a>
+    <a onclick="showSection('resources')">Resources</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('contact')">Contact</a>
 </nav>
 
-<section id="solutions">
+<!-- Solutions Section -->
+<section id="solutions" class="active-section">
     <div class="content">
-        <h2>SOC as a Service - Digital Track Solutions Pvt. Ltd.</h2>
-        <p>We provide top-tier SOC services designed to protect businesses from evolving cyber threats. Our expert team works around the clock to ensure your data remains safe. From proactive monitoring to incident response, we cover every aspect of your cybersecurity needs.</p>
+        <h2>Our Solutions</h2>
+        <p>We provide top-tier SOC services to protect your business from evolving cyber threats. Our SOC team works around the clock to ensure your systems are secure.</p>
     </div>
+</section>
+
+<!-- Partners Section -->
+<section id="partners">
+    <h2>Our IT Vendor Partners</h2>
+    <ul>
+        <li>Microsoft</li>
+        <li>IBM</li>
+        <li>Cisco</li>
+        <li>Fortinet</li>
+        <li>Check Point</li>
+        <li>Trend Micro</li>
+        <li>Palo Alto Networks</li>
+        <li>Sophos</li>
+        <li>McAfee</li>
+        <li>Splunk</li>
+    </ul>
+</section>
+
+<!-- Blog Section -->
+<section id="blog">
+    <h2>Cybersecurity Insights Blog</h2>
+    <div class="blog-entry">
+        <h3>Top 5 Emerging Cybersecurity Threats in 2024</h3>
+        <p>The cybersecurity landscape is always changing, and businesses need to be aware of the latest threats...</p>
+    </div>
+    <div class="blog-entry">
+        <h3>How SOC Services are Revolutionizing Enterprise Security</h3>
+        <p>Security Operation Centers (SOCs) have become an essential part of enterprise defense strategies...</p>
+    </div>
+</section>
+
+<!-- Resources Section -->
+<section id="resources">
+    <h2>Resources</h2>
+    <p>Here you'll find all the documentation, whitepapers, and other resources related to SOC services and cybersecurity.</p>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>Digital Track Solutions Pvt. Ltd. is a leading provider of SOC services. Our mission is to provide businesses with round-the-clock cybersecurity monitoring and threat detection to safeguard their critical assets.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
     <div class="contact-form">
-        <h3>Contact Us</h3>
-        <form>
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required>
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required>
-            <label for="companyName">Company Name</label>
-            <input type="text" id="companyName" name="companyName" required>
-            <label for="email">Work Email</label>
+        <form action="mailto:info@digitaltracksolutions.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-            <label for="message">Message</label>
+
+            <label for="message">Message:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
-            <button type="submit">Submit</button>
+
+            <button type="submit">Send</button>
         </form>
     </div>
 </section>
 
-<section class="team-section" id="team-section">
-    <h2>Meet Our SOC Team</h2>
-    <div class="team-grid">
-        <div class="team-member">
-            <img src="path_to_ebenezer_image.jpg" alt="Ebenezer">
-            <h3>Ebenezer</h3>
-            <p class="position">Head Technical Support - National Technical Support</p>
-            <a href="ebenezer_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_sunil_image.jpg" alt="Sunil Kumar CR">
-            <h3>Sunil Kumar CR</h3>
-            <p class="position">SOC Team Lead - L3 SOC Analyst</p>
-            <a href="sunil_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_dinesh_image.jpg" alt="Dinesh">
-            <h3>Dinesh</h3>
-            <p class="position">L2 SOC Analyst</p>
-            <a href="dinesh_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_akhilesh_image.jpg" alt="Akhilesh">
-            <h3>Akhilesh</h3>
-            <p class="position">L2 SOC Analyst</p>
-            <a href="akhilesh_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_christopher_image.jpg" alt="Christopher">
-            <h3>Christopher</h3>
-            <p class="position">L2 SOC Analyst</p>
-            <a href="christopher_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_revanth_image.jpg" alt="Deepak">
-            <h3>Deepak</h3>
-            <p class="position">L1 SOC Analyst</p>
-            <a href="Deepak_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_rabbani_image.jpg" alt="Rabbani">
-            <h3>Rabbani</h3>
-            <p class="position">L1 SOC Analyst</p>
-            <a href="rabbani_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_apuroop_image.jpg" alt="Apuroop">
-            <h3>Apuroop</h3>
-            <p class="position">L1 SOC Analyst</p>
-            <a href="apuroop_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_revanth_image.jpg" alt="Revanth">
-            <h3>Revanth</h3>
-            <p class="position">L1 SOC Analyst</p>
-            <a href="revanth_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-        <div class="team-member">
-            <img src="path_to_jagadeesh_image.jpg" alt="Saivenkat">
-            <h3>Saivenkat</h3>
-            <p class="position">L1 SOC Analyst</p>
-            <a href="Saivenkat_resume.pdf" class="resume-link" target="_blank">View Resume</a>
-        </div>
-    </div>
-</section>
-
 <footer class="footer">
-    <p>&copy; 2024 Digital Track Solutions Pvt. Ltd. | All Rights Reserved.</p>
-    <div class="address">
-        <p>Corporate Office: 123 Cyber Ave, Tech City, India</p>
-    </div>
+    <p>&copy; 2024 Digital Track Solutions Pvt. Ltd.</p>
 </footer>
 
 <script>
-    document.getElementById('resources-link').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        document.getElementById('team-section').style.display = 'block'; // Show team section
-        window.scrollTo({ top: document.getElementById('team-section').offsetTop, behavior: 'smooth' }); // Smooth scroll to the team section
-    });
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.classList.remove('active-section');
+        });
+
+        // Show the selected section
+        document.getElementById(sectionId).classList.add('active-section');
+    }
+
+    // Display the first section (Solutions) by default when the page loads
+    document.getElementById('solutions').classList.add('active-section');
 </script>
 
 </body>
