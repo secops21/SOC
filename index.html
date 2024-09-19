@@ -98,14 +98,11 @@
             background-color: #00b3e6;
         }
 
-        /* Team section hidden initially */
+        /* Team section */
         .team-section {
-            display: none;
             padding: 3rem;
             background-color: rgba(0, 0, 0, 0.8);
-        }
-        .team-section.active {
-            display: block;
+            display: none; /* Hidden by default */
         }
         .team-section h2 {
             color: #00d8ff;
@@ -204,7 +201,7 @@
     <a href="#solutions">Solutions</a>
     <a href="#partners">Partners</a>
     <a href="#blog">Blog</a>
-    <a href="#resources" onclick="showTeamSection()">Resources</a>
+    <a href="#resources" id="resources-link">Resources</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -238,7 +235,8 @@
         <div class="team-member">
             <img src="path_to_ebenezer_image.jpg" alt="Ebenezer">
             <h3>Ebenezer</h3>
-            <p class="position">Head Technical Support</p>
+            <p class="position">Head Technical Support - National Technical Support</p>
+            <a href="ebenezer_resume.pdf" class="resume-link" target="_blank">View Resume</a>
         </div>
         <div class="team-member">
             <img src="path_to_sunil_image.jpg" alt="Sunil Kumar CR">
@@ -252,32 +250,64 @@
             <p class="position">L2 SOC Analyst</p>
             <a href="dinesh_resume.pdf" class="resume-link" target="_blank">View Resume</a>
         </div>
+        <div class="team-member">
+            <img src="path_to_akhilesh_image.jpg" alt="Akhilesh">
+            <h3>Akhilesh</h3>
+            <p class="position">L2 SOC Analyst</p>
+            <a href="akhilesh_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_christopher_image.jpg" alt="Christopher">
+            <h3>Christopher</h3>
+            <p class="position">L2 SOC Analyst</p>
+            <a href="christopher_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_revanth_image.jpg" alt="Deepak">
+            <h3>Deepak</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="Deepak_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_rabbani_image.jpg" alt="Rabbani">
+            <h3>Rabbani</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="rabbani_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_apuroop_image.jpg" alt="Apuroop">
+            <h3>Apuroop</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="apuroop_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_revanth_image.jpg" alt="Revanth">
+            <h3>Revanth</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="revanth_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_jagadeesh_image.jpg" alt="Saivenkat">
+            <h3>Saivenkat</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="Saivenkat_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
     </div>
 </section>
 
-<section class="resources-section" id="resources">
-    <h2>Resources</h2>
-    <div class="soc-diagram">
-        <h3>Our SOC Team Hierarchy</h3>
-        <img src="path_to_soc_team_diagram.jpg" alt="SOC Team Diagram">
-    </div>
-</section>
-
-<div class="footer">
-    <p>&copy; 2024 Digital Track Solutions Pvt. Ltd. All Rights Reserved.</p>
+<footer class="footer">
+    <p>&copy; 2024 Digital Track Solutions Pvt. Ltd. | All Rights Reserved.</p>
     <div class="address">
-        <p>DigitalTrack Solutions Pvt Ltd.,<br>
-        #8-2-594/A, 2nd floor, Urmila Heights, Road No:10, Banjara Hills,<br>
-        Hyderabad – 500034<br>
-        Phone: 9989822324<br>
-        Email: <a href="mailto:sales@digitaltrack.in">sales@digitaltrack.in</a>, <a href="mailto:support@digitaltrack.in">support@digitaltrack.in</a></p>
+        <p>Corporate Office: 123 Cyber Ave, Tech City, India</p>
     </div>
-</div>
+</footer>
 
 <script>
-    function showTeamSection() {
-        document.getElementById('team-section').classList.toggle('active');
-    }
+    document.getElementById('resources-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('team-section').style.display = 'block'; // Show team section
+        window.scrollTo({ top: document.getElementById('team-section').offsetTop, behavior: 'smooth' }); // Smooth scroll to the team section
+    });
 </script>
 
 </body>
