@@ -107,6 +107,47 @@
             background-color: #333;
             border-radius: 8px;
         }
+        .team-section {
+            background-color: rgba(10, 15, 24, 0.9);
+            padding: 3rem;
+        }
+        .team-section h2 {
+            color: #00d8ff;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .team-member {
+            background-color: #333;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .team-member h3 {
+            color: #00d8ff;
+            margin: 1rem 0;
+        }
+        .team-member .position {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        .team-member .resume-link {
+            color: #00d8ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .team-member .resume-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -119,6 +160,7 @@
     <a onclick="showSection('solutions')">Solutions</a>
     <a onclick="showSection('partners')">Partners</a>
     <a onclick="showSection('blog')">Blog</a>
+    <a onclick="showSection('team-section')">Our Team</a>
     <a onclick="showSection('resources')">Resources</a>
     <a onclick="showSection('about')">About</a>
     <a onclick="showSection('contact')">Contact</a>
@@ -162,39 +204,103 @@
     </div>
 </section>
 
+<!-- Team Section -->
+<section class="team-section" id="team-section">
+    <h2>Meet Our SOC Team</h2>
+    <div class="team-grid">
+        <div class="team-member">
+            <img src="path_to_ebenezer_image.jpg" alt="Ebenezer">
+            <h3>Ebenezer</h3>
+            <p class="position">Head Technical Support - National Technical Support</p>
+            <a href="ebenezer_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_sunil_image.jpg" alt="Sunil Kumar CR">
+            <h3>Sunil Kumar CR</h3>
+            <p class="position">SOC Team Lead - L3 SOC Analyst</p>
+            <a href="sunil_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_dinesh_image.jpg" alt="Dinesh">
+            <h3>Dinesh</h3>
+            <p class="position">L2 SOC Analyst</p>
+            <a href="dinesh_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_akhilesh_image.jpg" alt="Akhilesh">
+            <h3>Akhilesh</h3>
+            <p class="position">L2 SOC Analyst</p>
+            <a href="akhilesh_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_christopher_image.jpg" alt="Christopher">
+            <h3>Christopher</h3>
+            <p class="position">L2 SOC Analyst</p>
+            <a href="christopher_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_revanth_image.jpg" alt="Deepak">
+            <h3>Deepak</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="Deepak_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_rabbani_image.jpg" alt="Rabbani">
+            <h3>Rabbani</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="rabbani_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_apuroop_image.jpg" alt="Apuroop">
+            <h3>Apuroop</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="apuroop_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_revanth_image.jpg" alt="Revanth">
+            <h3>Revanth</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="revanth_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+        <div class="team-member">
+            <img src="path_to_jagadeesh_image.jpg" alt="Saivenkat">
+            <h3>Saivenkat</h3>
+            <p class="position">L1 SOC Analyst</p>
+            <a href="Saivenkat_resume.pdf" class="resume-link" target="_blank">View Resume</a>
+        </div>
+    </div>
+</section>
+
 <!-- Resources Section -->
 <section id="resources">
     <h2>Resources</h2>
-    <p>Here you'll find all the documentation, whitepapers, and other resources related to SOC services and cybersecurity.</p>
+    <p>Explore our resources for in-depth information on cybersecurity practices, case studies, and more.</p>
 </section>
 
 <!-- About Section -->
 <section id="about">
     <h2>About Us</h2>
-    <p>Digital Track Solutions Pvt. Ltd. is a leading provider of SOC services. Our mission is to provide businesses with round-the-clock cybersecurity monitoring and threat detection to safeguard their critical assets.</p>
+    <p>Digital Track Solutions Pvt. Ltd. is dedicated to providing top-notch SOC services and cybersecurity solutions to protect your business.</p>
 </section>
 
 <!-- Contact Section -->
 <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-form">
-        <form action="mailto:info@digitaltracksolutions.com" method="post" enctype="text/plain">
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
-
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Send</button>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </div>
 </section>
 
 <footer class="footer">
-    <p>&copy; 2024 Digital Track Solutions Pvt. Ltd.</p>
+    <p>&copy; 2024 Digital Track Solutions Pvt. Ltd. All rights reserved.</p>
 </footer>
 
 <script>
@@ -208,9 +314,6 @@
         // Show the selected section
         document.getElementById(sectionId).classList.add('active-section');
     }
-
-    // Display the first section (Solutions) by default when the page loads
-    document.getElementById('solutions').classList.add('active-section');
 </script>
 
 </body>
