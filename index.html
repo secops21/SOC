@@ -35,6 +35,7 @@
             color: #00d8ff;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #fff;
@@ -91,10 +92,20 @@
             font-size: 1.1rem;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+        .contact-form button:hover {
+            background-color: #00b3e6;
+        }
+
+        /* Team section hidden initially */
         .team-section {
+            display: none;
             padding: 3rem;
             background-color: rgba(0, 0, 0, 0.8);
+        }
+        .team-section.active {
+            display: block;
         }
         .team-section h2 {
             color: #00d8ff;
@@ -138,6 +149,7 @@
             border-radius: 4px;
             font-weight: bold;
         }
+
         .footer {
             background-color: rgba(0, 0, 0, 0.9);
             color: #fff;
@@ -145,6 +157,7 @@
             padding: 1rem;
             font-size: 0.9rem;
         }
+
         .categories {
             text-align: center;
             margin: 2rem 0;
@@ -174,6 +187,11 @@
         .soc-diagram img {
             width: 100%;
         }
+
+        /* Address section */
+        .footer .address {
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -186,7 +204,7 @@
     <a href="#solutions">Solutions</a>
     <a href="#partners">Partners</a>
     <a href="#blog">Blog</a>
-    <a href="#resources">Resources</a>
+    <a href="#resources" onclick="showTeamSection()">Resources</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -214,7 +232,7 @@
     </div>
 </section>
 
-<section class="team-section">
+<section class="team-section" id="team-section">
     <h2>Meet Our SOC Team</h2>
     <div class="team-grid">
         <div class="team-member">
@@ -234,7 +252,6 @@
             <p class="position">L2 SOC Analyst</p>
             <a href="dinesh_resume.pdf" class="resume-link" target="_blank">View Resume</a>
         </div>
-        <!-- Add other team members similarly -->
     </div>
 </section>
 
@@ -246,9 +263,22 @@
     </div>
 </section>
 
-<section class="footer">
-    &copy; 2024 Digital Track Solutions Pvt. Ltd. All Rights Reserved.
-</section>
+<div class="footer">
+    <p>&copy; 2024 Digital Track Solutions Pvt. Ltd. All Rights Reserved.</p>
+    <div class="address">
+        <p>DigitalTrack Solutions Pvt Ltd.,<br>
+        #8-2-594/A, 2nd floor, Urmila Heights, Road No:10, Banjara Hills,<br>
+        Hyderabad – 500034<br>
+        Phone: 9989822324<br>
+        Email: <a href="mailto:sales@digitaltrack.in">sales@digitaltrack.in</a>, <a href="mailto:support@digitaltrack.in">support@digitaltrack.in</a></p>
+    </div>
+</div>
+
+<script>
+    function showTeamSection() {
+        document.getElementById('team-section').classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>
