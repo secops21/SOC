@@ -298,46 +298,122 @@
 </div>
 
 
-<!-- Resources Section -->
-<section id="resources">
-    <h2>Resources</h2>
-    <p>Find valuable resources to enhance your cybersecurity knowledge and strategies.</p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Track Solutions Pvt. Ltd.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        section {
+            padding: 2rem;
+            margin: 1rem;
+            background-color: white;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #555;
+        }
+        .active-section {
+            display: block;
+        }
+        section {
+            display: none;
+        }
+        #resources, #about, #contact {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Digital Track Solutions Pvt. Ltd.</h1>
+    </header>
 
-<!-- About Section -->
-<section id="about">
-    <h2>About Us</h2>
-    <p>Digital Track Solutions Pvt. Ltd. is dedicated to providing top-notch cybersecurity solutions...</p>
-</section>
+    <!-- Resources Section -->
+    <section id="resources">
+        <h2>Resources</h2>
+        <p>Find valuable resources to enhance your cybersecurity knowledge and strategies.</p>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-form">
-        <form action="mailto:dinehm2114@gmail.com" method="POST" enctype="text/plain">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Digital Track Solutions Pvt. Ltd. is dedicated to providing top-notch cybersecurity solutions...</p>
+    </section>
 
-<footer class="footer">
-    <p>&copy; 2024 Digital Track Solutions Pvt. Ltd. All Rights Reserved.</p>
-</footer>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="mailto:dinehm2114@gmail.com" method="POST" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-<script>
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-            section.classList.remove('active-section');
-        });
-        document.getElementById(sectionId).classList.add('active-section');
-    }
-</script>
+    <footer class="footer">
+        <p>&copy; 2024 Digital Track Solutions Pvt. Ltd. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+            document.getElementById(sectionId).classList.add('active-section');
+        }
+    </script>
 </body>
 </html>
+
